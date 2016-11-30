@@ -8,6 +8,12 @@
   opacity: 0.2;
   background-color: #cccccc;
 }*/
+body{
+  background-image:url("https://images-na.ssl-images-amazon.com/images/M/MV5BMTU1NTUxODA2Nl5BMl5BanBnXkFtZTcwNTQ3NDkwNA@@._V1_UY100_CR13,0,100,100_AL_.jpg");
+  background-repeat: no-repeat;
+  opacity: 0.3;
+}
+
 
 .header{
   height: 300px;
