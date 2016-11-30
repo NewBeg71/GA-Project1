@@ -76,6 +76,17 @@ button{
   text-align: center;
 }
 
+#startButton{
+  background-color: blue;
+  display: inline;
+  color: white;
+  width: 100px;
+  margin: auto;
+  border: 1px solid white;
+  border-radius: 15px;
+  text-align: center;
+}
+
 /*.game_board{
   background-color: tan;
   align-items: flex-end;
