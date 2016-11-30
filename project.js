@@ -40,11 +40,11 @@ console.log(choosenWord);*/
 //need the variables will use in functions
 //variable to assign random word to
 
-var wordListBank/*data.Word*/ = [];
+var wordListBank/*data.Word*/ = new Array;
 //variable to place individual letters into - an array - will need to split(Python methos) and place letters here
-var newArray = [];
+var newArray = new Array;
 //an array for choosenletters which will use to black out letter
-var previousWordChoices = [];
+var previousWordChoices = new Array;
 //for number of chances have till hung
 /*var livesLeft = 6;
 //for remaining letters to pick
@@ -63,13 +63,15 @@ var wrongAnswerCount;
 //start creating functions
 $(document).ready (function(){
   $.getJSON('wordlist.json', function(data) {
-    for(i=0; i<wordlist.length; i++){
-      wordListBank[i] = newArray;
-      wordListBank[i][0] = wordlist[i].word;
-      wordListBank[i][1] = wordlist[i].clue;
+    for(i=0; i<data.wordlist.length; i++){
+      wordListBank[i] = new Array;
+      wordListBank[i][0] = data.wordlist[i].word;
+      wordListBank[i][1] = data.wordlist[i].clue;
       }
       alert(wordListBank);
-    });
+    })
+
+  $()  
 });
 
 //functions below will become nested in the ready function above once completed
