@@ -71,8 +71,36 @@ $(document).ready (function(){
       alert(wordListBank);
     })
 
-  $()  
-});
+function header(){
+  $('.header').append('<div class='title'>Hangman</div><div id ='startButton' class='button'>Start</div');
+  $('#startButton').on('click', function (){gameScreen()});
+}
+
+function gameScreen(){
+  $('.header').empty();
+  $('.header').append('<div class = 'imgPlace'><img class = 'hangman' src = 'man.png'></div>');
+  $('.header').append('<div class = 'wordPlace'></div>');
+  $('.header').append('<div class = 'cluePlace'></div>');
+  $('.header').append('<div class = 'guesses'>Previous Guesses: </div>');
+  $('.header').append('<div class = 'feedback'></div>');
+
+  getWord();
+  var numberOfSpaces = currentWord.length;
+  wrongAnswerCount = 0;
+  previousWordChoices = [];
+
+  for(i=0; i<numberOfSpaces; i ++){
+    $('').append('div class = 'tile' id = t'+i+'></div>');
+  }
+
+  $('').append('Hint: ' + currentClue);
+
+  $(document).onClick('a');
+}
+
+//Not ready for closing tag yet !!!!!!
+
+  });
 
 //functions below will become nested in the ready function above once completed
 /*function useWord(){
