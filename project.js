@@ -78,12 +78,12 @@ function header(){
 }
 
 function gameScreen(){
-  $('.header').empty();
-  $('.header').append('<div class = 'imgPlace'><img class = 'hangman' src = 'man.png'></div>');
-  $('.header').append('<div class = 'wordPlace'></div>');
-  $('.header').append('<div class = 'cluePlace'></div>');
-  $('.header').append('<div class = 'guesses'>Previous Guesses: </div>');
-  $('.header').append('<div class = 'feedback'></div>');
+  $('.container').empty();
+  $('.container').append('<div class = 'imgPlace'><img class = 'hangman' src = 'man.png'></div>');
+  $('.container').append('<div class = 'wordPlace'></div>');
+  $('.container').append('<div class = 'cluePlace'></div>');
+  $('.container').append('<div class = 'guesses'>Previous Guesses: </div>');
+  $('.container').append('<div class = 'feedback'></div>');
 
   getWord();
   var numberOfSpaces = currentWord.length;
