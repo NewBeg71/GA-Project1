@@ -16,8 +16,8 @@ body background{
   background-image: url("https://images-na.ssl-images-amazon.com/images/M/MV5BMTU1NTUxODA2Nl5BMl5BanBnXkFtZTcwNTQ3NDkwNA@@._V1_UY100_CR13,0,100,100_AL_.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
-  width: 100%;
+  /*height: 100%;
+  width: 100%;*/
   opacity: 0.3;
 }
 
