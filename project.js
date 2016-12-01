@@ -40,11 +40,11 @@ console.log(choosenWord);*/
 //need the variables will use in functions
 //variable to assign random word to
 
-var wordListBank = new Array;
+var wordListBank = newArray;
 //variable to place individual letters into - an array - will need to split(Python methos) and place letters here
-var newArray = new Array;
+var newArray = newArray;
 //an array for choosenletters [maybe which will use to black out letter
-var previousWordChoices = new Array;
+var previousWordChoices = newArray;
 //for number of chances have till hung
 /*var livesLeft = 6;
 //for remaining letters to pick
@@ -69,8 +69,8 @@ $(document).ready (function(){
       wordListBank[i][0] = data.wordlist[i].word;
       wordListBank[i][1] = data.wordlist[i].clue;
       }
-      alert(wordListBank);
-    })
+      /*alert(wordListBank);*/
+})
 
 function header(){
   $('.header').append('<h1>Hangman</h1>');
@@ -93,7 +93,7 @@ function gameScreen(){
 
   for(i=0; i<numberOfSpaces; i ++){
     $('').append('div class = "tile" id = t"+i+""></div>');
-  }
+}
 
   $('wordPlace').append('Hint: ' + currentClue);
 //change to onClick('<element' to reutilizr original idea for interaction)
@@ -106,7 +106,7 @@ function getWord(){
   currentCLue = wordListBank [rnd][0];
   wordListBank.splice (rnd, 1);
   newArray = currentWord.split('');
-};
+}
 
 /*function(){
 
