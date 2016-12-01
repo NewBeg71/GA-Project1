@@ -1,4 +1,4 @@
-{"wordlist":[
+var wordlist = [
 
 {
 "word":"platypus",
@@ -65,5 +65,4 @@
 "clue":"a dinasour"
 },
 
-]
-}
+];
