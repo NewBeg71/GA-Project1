@@ -40,10 +40,10 @@ console.log(choosenWord);*/
 //need the variables will use in functions
 //variable to assign random word to
 
-var wordListBank/*data.Word*/ = new Array;
+var wordListBank = new Array;
 //variable to place individual letters into - an array - will need to split(Python methos) and place letters here
 var newArray = new Array;
-//an array for choosenletters which will use to black out letter
+//an array for choosenletters [maybe which will use to black out letter
 var previousWordChoices = new Array;
 //for number of chances have till hung
 /*var livesLeft = 6;
@@ -61,6 +61,7 @@ var wrongAnswerCount;
 
 
 //start creating functions
+//pull data - set up basic html w/ javascript functions
 $(document).ready (function(){
   $.getJSON('wordlist.json', function(data) {
     for(i=0; i<data.wordlist.length; i++){
@@ -94,11 +95,26 @@ function gameScreen(){
     $('').append('div class = 'tile' id = t'+i+'></div>');
   }
 
-  $('').append('Hint: ' + currentClue);
-
-  $(document).onClick('a');
+  $('wordPlace').append('Hint: ' + currentClue);
+//change to onClick('<element' to reutilizr original idea for interaction)
+  $(document).on('keyup', recognizeKeyUp);/*Click('a');*/
 }
+//pull from array and split to start comparing
+function getWord(){
+  var rnd = Math.floor(Math.random() * wordListBank.length);
+  currentWord = wordListBank [rnd][0];
+  currentCLue = wordListBank [rnd][0];
+  wordListBank.splice (rnd, 1);
+  newArray = currentWord.split('');
+};
 
+function(){
+
+};
+
+function(){
+
+};
 //Not ready for closing tag yet !!!!!!
 
   });
@@ -106,19 +122,19 @@ function gameScreen(){
 //functions below will become nested in the ready function above once completed
 /*function useWord(){
 
-};
-
-function(){
-
-};
-
-function(){
-
-};
-
-function(){
-
 };*/
+
+function(){
+
+};
+
+function(){
+
+};
+
+function(){
+
+};
 
 //give user a choose of letters - done w/css/html - need onClick to assign letter as variable
 //to compare to the variables created after random word is generated
