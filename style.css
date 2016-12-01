@@ -23,7 +23,7 @@ body{
 
 
 .header{
-  height: 300px;
+  height: 200px;
   margin: 15% auto;
   /*margin-top: 50px*/
   padding: 20px;
@@ -34,58 +34,10 @@ body{
   border-radius: 15px 50px;
 }
 
-/*want a background gif from hand em high with music from BAD - an afterthgought
-*/
-.container{
+h1 {
   color: black;
-  font-style: bold;
+  font-size: 22px;
   font-family: sans-serif;
-  text-align: center;
-  width: 50%;
-  height: 300px;
-  border-radius: 15px 50px;
-  background-color: grey;
-  border: 3px solid black;
-  padding: 20px;
-  display: block;
-  margin: 15% auto;
-}
-  /*background-color: white;
-  justify-content: center;
-  align-items: flex-center;*/
-#letterOpts a{
-  color: white;
-  background-color: blue;
-  font-family: sans-serif;
-  border: 1px solid black;
-  padding: 5px;
-  border radius: 10px;
-  cursor: progress;
-}
-
-/*a *(
-  color: white;
-  background-color: blue;
-  )*/
-
-#letterOpts a:hover{
-  color: red;
-  background-color: yellow;
-}
-
-#letterOpts a .off{
-  color: black;
-  background-color: black;
-}
-
-button{
-  background-color: blue;
-  display: inline;
-  color: white;
-  width: 100px;
-  margin: auto;
-  border: 1px solid white;
-  border-radius: 15px;
   text-align: center;
 }
 
@@ -99,6 +51,98 @@ button{
   border-radius: 15px;
   text-align: center;
 }
+
+/*want a background gif from hand em high with music from BAD - an afterthgought
+*/
+.container{
+  color: black;
+  font-style: bold;
+  font-family: sans-serif;
+  text-align: center;
+  width: 50%;
+  height: 200px;
+  border-radius: 15px 50px;
+  background-color: grey;
+  border: 3px solid black;
+  padding: 20px;
+  display: block;
+  margin: 15% auto;
+}
+  /*background-color: white;
+  justify-content: center;
+  align-items: flex-center;*/
+
+.imgPlace{
+    margin-left: 30px;
+    width: 75px;
+    float: left;
+    overflow: hidden;
+}
+
+.imgPlace img{
+  position: relative;
+}
+
+.wordPlace{
+  margin: 50px 0px 0px 150px;
+}
+
+.cluePlace{
+  margin: 130px 0px 0px 150px;
+}
+
+.guesses{
+  margin: 20px 0px 0px 150px;
+}
+
+.feedback{
+  margin: 20px 0px 0px 150px;
+  font-size 28px;
+  color: black;
+}
+
+.tile{
+
+}
+
+
+/*#letterOpts a{
+  color: white;
+  background-color: blue;
+  font-family: sans-serif;
+  border: 1px solid black;
+  padding: 5px;
+  border radius: 10px;
+  cursor: progress;
+}*/
+
+/*a *(
+  color: white;
+  background-color: blue;
+  )*/
+
+/*#letterOpts a:hover{
+  color: red;
+  background-color: yellow;
+}
+
+#letterOpts a .off{
+  color: black;
+  background-color: black;
+}*/
+
+/*button{
+  background-color: blue;
+  display: inline;
+  color: white;
+  width: 100px;
+  margin: auto;
+  border: 1px solid white;
+  border-radius: 15px;
+  text-align: center;
+}*/
+
+
 
 /*.game_board{
   background-color: tan;

@@ -74,17 +74,17 @@ $(document).ready (function(){
 
 function header(){
   $('.header').append('<h1>Hangman</h1>');
-  $('.header').append('<button id = 'startButton'>Start</div');
+  $('.header').append('<button id = "startButton">Start</div>');
   $('#startButton').on('click', function (){gameScreen()});
 }
 
 function gameScreen(){
   $('.container').empty();
-  $('.container').append('<div class = 'imgPlace'><img class = 'hangman' src = 'man.png'></div>');
-  $('.container').append('<div class = 'wordPlace'></div>');
-  $('.container').append('<div class = 'cluePlace'></div>');
-  $('.container').append('<div class = 'guesses'>Previous Guesses: </div>');
-  $('.container').append('<div class = 'feedback'></div>');
+  $('.container').append('<div class = "imgPlace"><img class = "hangman" src = "man.png"></div>');
+  $('.container').append('<div class = "wordPlace"></div>');
+  $('.container').append('<div class = "cluePlace"></div>');
+  $('.container').append('<div class = "guesses">Previous Guesses: </div>');
+  $('.container').append('<div class = "feedback"></div>');
 
   getWord();
   var numberOfSpaces = currentWord.length;
@@ -92,7 +92,7 @@ function gameScreen(){
   previousWordChoices = [];
 
   for(i=0; i<numberOfSpaces; i ++){
-    $('').append('div class = 'tile' id = t'+i+'></div>');
+    $('').append('div class = "tile" id = t"+i+""></div>');
   }
 
   $('wordPlace').append('Hint: ' + currentClue);
@@ -108,14 +108,14 @@ function getWord(){
   newArray = currentWord.split('');
 };
 
-function(){
+/*function(){
 
 };
 
 function(){
 
 };
-//Not ready for closing tag yet !!!!!!
+//Not ready for closing tag yet !!!!!!*/
 
   });
 
@@ -124,7 +124,7 @@ function(){
 
 };*/
 
-function(){
+/*function(){
 
 };
 
@@ -134,7 +134,7 @@ function(){
 
 function(){
 
-};
+};*/
 
 //give user a choose of letters - done w/css/html - need onClick to assign letter as variable
 //to compare to the variables created after random word is generated
