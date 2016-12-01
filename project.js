@@ -70,7 +70,7 @@ $(document).ready (function(){
       wordListBank[i][1] = data.wordlist[i].clue;
       }
       /*alert(wordListBank);*/
-})
+)}
 
 function header(){
   $('.header').append('<h1>Hangman</h1>');
