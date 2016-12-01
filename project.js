@@ -64,16 +64,16 @@ var wrongAnswerCount;
 //start creating functions
 //pull data - set up basic html w/ javascript functions
 $(document).ready (function(){
-  $.getJSON('wordlist.json', function(data) {
-    for(i=0; i<data.wordlist.length; i++){
+  // $.getJSON('wordlist.json', (function() {
+    for(i=0; i<wordlist.length; i++){
       wordListBank[i] = array;
-      wordListBank[i][0] = data.wordlist[i].word;
-      wordListBank[i][1] = data.wordlist[i].clue;
+      wordListBank[i][0] = wordlist[i].word;
+      wordListBank[i][1] = wordlist[i].clue;
         }
-      });
+      // });
 
-      header();
-      gameScreen();
+      // header();
+      // gameScreen();
       //getWord();
       //checkAnswer();
 
@@ -84,7 +84,7 @@ $(document).ready (function(){
   //console.log(myTest);
 
 function header(){
-  $('.header').append("<h1>Hangman</h1>");
+  $(".header").append("<h1>Hangman</h1>");
   $(".header").append("<button id='startButton'>Start</button>");
   $("#startButton").on('click', function (){gameScreen();});
 }
@@ -135,9 +135,9 @@ function recognizeKeyUp(event){
     if(!previouslyEntered){
       previousGuesses.push(input);
 
-      for(i=0; i<wordArray.length; i++){
+      for(i=0; i<newArray.length; i++){
 
-        if(input==wordArray[i]){
+        if(input==newArray[i]){
           found=true;
           $('#t'+i).append(input);
         }
@@ -148,6 +148,8 @@ function recognizeKeyUp(event){
     }
   }
 }
+
+// what to do once comparing with if/else
 
 function checkAnswer(){
   var currentAnswer="";
@@ -163,7 +165,7 @@ function wrongAnswer(a){
 	wrongAnswerCount++;
 	var pos=(wrongAnswerCount*-75) +"px";
 	$('#guesses').append("  "+a);
-	$('#hangman').css("left",pos);
+	$('.hangman').css("left",pos);
 	if(wrongAnswerCount==6){
 		defeatMessage();}
 }
@@ -189,8 +191,8 @@ function defeatMessage(){
 }
 
 function finalPage(){
-    $('#gameContent').empty();
-    $('#gameContent').append('<div id="finalMessage">You have finished all the words in the game!</div>');
+    $('.container').empty();
+    $('.container').append('<div id="finalMessage">You have finished all the words in the game!</div>');
 }
 
 };
