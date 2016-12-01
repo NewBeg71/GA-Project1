@@ -74,8 +74,8 @@ $(document).ready (function(){
     });
 
       /*alert(wordListBank);*/
-var myTest = document.getElementById('startButton');
-  console.log(myTest);
+//var myTest = document.getElementById('startButton');
+  //console.log(myTest);
 
 function header(){
   $(".header").append("<h1>Hangman</h1>");
