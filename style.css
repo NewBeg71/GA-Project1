@@ -25,13 +25,14 @@ body{
 .header{
   height: 50px;
   margin: /*15%*/ auto;
-  /*margin-top: 50px*/
-  /*padding: 20px;*/
+  margin-top: 50px
+  padding: 20px;
   color: black;
   width: 800px;
   background-color: tan;
   border: 3px solid black;
   border-radius: 15px 50px;
+  text-align: center;
 }
 
 h1 {
