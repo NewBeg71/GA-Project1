@@ -71,6 +71,7 @@ $(document).ready (function(){
       wordListBank[i][1] = data.wordlist[i].clue;
         }
       });
+      header();
     });
 
       /*alert(wordListBank);*/
