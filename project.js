@@ -73,7 +73,8 @@ $(document).ready (function(){
     });
 
       /*alert(wordListBank);*/
-
+var myTest = document.getElementByClassName('header');
+  console.log(myTest);
 
 function header(){
   $(".header").append("<h1>Hangman</h1>");
