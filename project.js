@@ -76,7 +76,7 @@ $(document).ready (function(){
 
 
 function header(){
-  $(".header").append("Hangman");
+  $("div").append("Hangman");
   //$(".header").append("<button id='startButton'>Start</button>");
   //$("#startButton").on('click', function (){gameScreen();});
 }
