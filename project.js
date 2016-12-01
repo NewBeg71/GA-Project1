@@ -69,9 +69,9 @@ $(document).ready (function(){
       wordListBank[i][0] = data.wordlist[i].word;
       wordListBank[i][1] = data.wordlist[i].clue;
       }
-      alert(wordListBank);
+      /*alert(wordListBank);*/
 })
-/*
+
 function header(){
   $('.header').append('<h1>Hangman</h1>');
   $('.header').append('<button id = "startButton">Start</div>');
@@ -87,37 +87,62 @@ function gameScreen(){
   $('.container').append('<div class = "feedback"></div>');
 
   getWord();
-  var numberOfSpaces = currentWord.length;
+  var numberOfTiles = currentWord.length;
   wrongAnswerCount = 0;
   previousWordChoices = [];
 
-  for(i=0; i<numberOfSpaces; i ++){
-    $('').append('div class = "tile" id = t"+i+""></div>');
+  for(i=0; i<numberOfTiles; i ++){
+    $('wordPlace').append('div class = "tile" id = t"+i+""></div>');
 }
 
-  $('wordPlace').append('Hint: ' + currentClue);
+  $('cluePlace').append('Hint: ' + currentClue);
 //change to onClick('<element' to reutilizr original idea for interaction)
   $(document).on('keyup', recognizeKeyUp);/*Click('a');*/
 }
 //pull from array and split to start comparing
-/*function getWord(){
+function getWord(){
   var rnd = Math.floor(Math.random() * wordListBank.length);
   currentWord = wordListBank [rnd][0];
   currentCLue = wordListBank [rnd][0];
   wordListBank.splice (rnd, 1);
-  newArray = currentWord.split('');
-}*/
+  newArray = currentWord.split("");
+}
+
+function handleKeyUp(event){
+  if(event.keyCode>64 && event.keyCode<91){
+    var found = false;
+    var previouslyEntered=false;
+    var input=String.fromCharCode(event.keyCode).toLowerCase();
+
+    for(i=0; i<previousGuesses.length; i++){
+      if(input==previousGuesses[i]){
+        previouslyEntered=true;
+      }
+    }
+
+    if(!previouslyEntered){
+      previousGuesses.push(input);
+
+      for(i=0; i<wordArray.length; i++){
+
+        if(input==wordArray[i]){
+          found=true;
+          $('#t'+i).append(input);
+        }
+      }
+
+      if(found){checkAnswer();}
+      else{wrongAnswer(input);}
+    }
+  }
+}
 
 /*function(){
 
 };
-
-function(){
-
-};
 //Not ready for closing tag yet !!!!!!*/
 
-//  });
+/*});
 
 //functions below will become nested in the ready function above once completed
 /*function useWord(){
