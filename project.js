@@ -73,9 +73,9 @@ $(document).ready (function(){
       });
       header();
       gameScreen();
-      getWord();
-      checkAnswer();
-      
+      //getWord();
+      //checkAnswer();
+
     });
 
       /*alert(wordListBank);*/
