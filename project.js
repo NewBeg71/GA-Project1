@@ -39,13 +39,13 @@ console.log(choosenWord);*/
 
 //need the variables will use in functions
 //variable to assign random word to
-var array = [];
+// var array = [];
 
-var wordListBank = array;
+// var wordListBank = array;
 //variable to place individual letters into - an array - will need to split(Python methos) and place letters here
-var newArray = array;
+// var newArray = array;
 //an array for choosenletters [maybe which will use to black out letter
-var previousWordChoices = array;
+// var previousWordChoices = array;
 //for number of chances have till hung
 /*var livesLeft = 6;
 //for remaining letters to pick
@@ -54,11 +54,11 @@ var lettersRemaining = Word.Length;
 var word = 'tryout';
 //?Displayed Word
 var wordDisplay = '';*/
-var currentWord;
+// var currentWord;
 
-var currentClue;
+// var currentClue;
 
-var wrongAnswerCount;
+// var wrongAnswerCount;
 
 
 //start creating functions
@@ -87,8 +87,8 @@ $(document).ready (function(){
   var wrongAnswerCount;
 
 
-  // $.getJSON('wordlist.json', (function() {
-    for(i=0; i<wordlist.length; i++){
+  // $.getJSON('wordlist.json',
+    for(i=0; i<wordListBank.length; i++){
       wordListBank[i] = array;
       wordListBank[i][0] = wordlist[i].word;
       wordListBank[i][1] = wordlist[i].clue;
@@ -113,9 +113,9 @@ $(document).ready (function(){
   //console.log(myTest);
 
 function header(){
-  $(".header").append("<h1>Hangman</h1>");
-  $(".header").append("<button id='startButton'>Start</button>");
-  $("#startButton").on('click', function (){gameScreen();});
+  $(".header").append('<h1>HANGMAN GAME</h1>');
+  $(".header").append('<div id="startButton" class="button">Start</div>');
+  $("#startButton").on("click", function (){gameScreen();});
 }
 
 
@@ -126,11 +126,12 @@ function gameScreen(){
   $(".container").append('<div class="cluePlace"></div>');
   $(".container").append('<div class="guesses">Previous Guesses: </div>');
   $(".container").append('<div class="feedback"></div>');
+  $("container").append('<form><input type="text" id="dummy"></form>');
 
  getWord();
-  var numberOfTiles = currentWord.length;
-  wrongAnswerCount = 0;
-  previousWordChoices = [];
+  var numberOfTiles=currentWord.length;
+  wrongAnswerCount=0;
+  previousWordChoices=[];
 
   for(var i=0; i<numberOfTiles; i++){
     $('.wordPlace').append('<div class="tile" id=t'+i+'></div>');
@@ -140,11 +141,11 @@ $('.cluePlace').append('Hint: ' + currentClue);
 //change to onClick('<element' to reutilizr original idea for interaction)
   $(document).on("keyup", recognizeKeyUp);/*Click('a');*/
   $(document).on("click", function(){$("dummy").focus();});
-  $("dummy").focus();
+  $("#dummy").focus();
 }
 //pull from array and split to start comparing
 function getWord(){
-  var rnd=Math.floor(Math.random() * wordListBank.length);
+  var rnd=Math.floor(Math.random()*wordListBank.length);
   currentWord=wordListBank [rnd][0];
   currentClue=wordListBank [rnd][1];
   wordListBank.splice (rnd, 1);
@@ -157,7 +158,7 @@ function recognizeKeyUp(event){
     var previouslyEntered=false;
     var input=String.fromCharCode(event.keyCode).toLowerCase();
 
-    for(var i=0; i<previousGuesses.length; i++){
+    for(var i=0; i<previousWordChoices.length; i++){
 
       if(input==previousWordChoices[i]){
         previouslyEntered=true;
@@ -196,7 +197,7 @@ if(currentAnswer==currentWord){
 function wrongAnswer(a){
 	wrongAnswerCount++;
 	var pos=(wrongAnswerCount*-75) +"px";
-	$('#guesses').append("  "+a);
+	$('.guesses').append("  "+a);
 	$('.hangman').css("left",pos);
 	if(wrongAnswerCount==6){
 		defeatMessage();}
@@ -205,7 +206,7 @@ function wrongAnswer(a){
 function victoryMessage(){
   document.activeElement.blur();
 	$(document).off("keyup", recognizeKeyUp);
-	$('#feedback').append("CORRECT!<br><br><div id='replay' class='button'>CONTINUE</div>");
+	$('.feedback').append("CORRECT!<br><br><div id='replay' class='button'>CONTINUE</div>");
   $('#replay').on("click", function (){
     	if(wordListBank.length>0){
     		gameScreen();}
@@ -214,8 +215,9 @@ function victoryMessage(){
 }
 
 function defeatMessage(){
+    document.activeElement.blur();
     $(document).off("keyup", recognizeKeyUp);
-    $('#feedback').append("You're Dead!<br>(answer= "+ currentWord +")<div id='replay' class='button'>CONTINUE</div>");
+    $('.feedback').append("You're Dead!<br>(answer= "+ currentWord +")<div id='replay' class='button'>CONTINUE</div>");
     $('#replay').on("click", function (){
     	if(wordListBank.length>0){
     	gameScreen();}
@@ -225,12 +227,9 @@ function defeatMessage(){
 
 function finalPage(){
     $('.container').empty();
-    $('.container').append('<div id="finalMessage">You have finished all the words in the game!</div>');
-}
-
-
-
-// };
+    $('.container').append('<div id="finalMessage">You have exhausted your options!</div>');
+  }
+});
 
 
 
