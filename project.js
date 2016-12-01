@@ -68,14 +68,17 @@ $(document).ready (function(){
       wordListBank[i] = new Array;
       wordListBank[i][0] = data.wordlist[i].word;
       wordListBank[i][1] = data.wordlist[i].clue;
-      }
+        }
+      })
+    })
+
       /*alert(wordListBank);*/
-)}
+
 
 function header(){
   $('.header').append('<h1>Hangman</h1>');
   $('.header').append('<button id = "startButton">Start</div>');
-  $('#startButton').on('click', function (){gameScreen()});
+  $('#startButton').on('click', function (){gameScreen();});
 }
 
 function gameScreen(){

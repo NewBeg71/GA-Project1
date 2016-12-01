@@ -28,7 +28,7 @@ body{
   margin-top: 50px
   padding: 20px;
   color: black;
-  width: 800px;
+  width: 50%;
   background-color: tan;
   border: 3px solid black;
   border-radius: 15px 50px;
@@ -56,11 +56,11 @@ h1 {
 /*want a background gif from hand em high with music from BAD - an afterthgought
 */
 .container{
-  /color: black;
+  color: black;
   font-style: bold;
   font-family: sans-serif;
   text-align: center;
-  width: 800px /*50%*/;
+  width: 50%;
   height: 400px;
   border-radius: 15px 50px;
   background-color: grey;
