@@ -71,8 +71,8 @@ $(document).ready (function(){
       wordListBank[i][1] = data.wordlist[i].clue;
         }
       });
-      header();
-      gameScreen();
+      //header();
+      //gameScreen();
       //getWord();
       //checkAnswer();
 
