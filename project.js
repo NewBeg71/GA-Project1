@@ -73,6 +73,9 @@ $(document).ready (function(){
       });
       header();
       gameScreen();
+      getWord();
+      checkAnswer();
+      
     });
 
       /*alert(wordListBank);*/
@@ -118,7 +121,7 @@ function getWord(){
 
 function recognizeKeyUp(event){
   if(event.keyCode>64 && event.keyCode<91){
-    var found = false;
+    var found=false;
     var previouslyEntered=false;
     var input=String.fromCharCode(event.keyCode).toLowerCase();
 
@@ -145,7 +148,49 @@ function recognizeKeyUp(event){
   }
 }
 
-/*function(){
+function checkAnswer(){
+  var currentAnswer="";
+for(i=0;i<currentWord.length;i++){
+  currentAnswer+=($('#t'+i).text());
+}
+if(currentAnswer==currentWord){
+  victoryMessage();
+}
+}
+
+function wrongAnswer(a){
+	wrongAnswerCount++;
+	var pos=(wrongAnswerCount*-75) +"px";
+	$('#guesses').append("  "+a);
+	$('#hangman').css("left",pos);
+	if(wrongAnswerCount==6){
+		defeatMessage();}
+}
+
+function victoryMessage(){
+	$(document).off("keyup", handleKeyUp);
+	$('#feedback').append("CORRECT!<br><br><div id='replay' class='button'>CONTINUE</div>");
+    $('#replay').on("click",function (){
+    	if(questionBank.length>0){
+    		gameScreen();}
+    		else{finalPage();}
+    });
+}
+
+function defeatMessage(){
+    $(document).off("keyup", handleKeyUp);
+    $('#feedback').append("You're Dead!<br>(answer= "+ currentWord +")<div id='replay' class='button'>CONTINUE</div>");
+    $('#replay').on("click",function (){
+    	if(questionBank.length>0){
+    	gameScreen();}
+    	else{finalPage();}
+	});
+}
+
+function finalPage(){
+    $('#gameContent').empty();
+    $('#gameContent').append('<div id="finalMessage">You have finished all the words in the game!</div>');
+}
 
 };
 //Not ready for closing tag yet !!!!!!*/
