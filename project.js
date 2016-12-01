@@ -193,9 +193,11 @@ function finalPage(){
 }
 
 };
+
+
 //Not ready for closing tag yet !!!!!!*/
 
-/*});
+//});
 
 //functions below will become nested in the ready function above once completed
 /*function useWord(){
