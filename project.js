@@ -99,24 +99,24 @@ function gameScreen(){
   wrongAnswerCount = 0;
   previousWordChoices = [];
 
-  for(i=0; i<numberOfTiles; i ++){
-    $('wordPlace').append('div class = "tile" id = t"+i+""></div>');
+  for(i=0; i<numberOfTiles; i++){
+    $('.wordPlace').append('div class="tile" id=t"+i+"></div>');
 }
 
-$('cluePlace').append('Hint: ' + currentClue);
+$('.cluePlace').append('Hint: ' + currentClue);
 //change to onClick('<element' to reutilizr original idea for interaction)
-  $(document).on('keyup', recognizeKeyUp);/*Click('a');*/
+  $(document).on("keyup", recognizeKeyUp);/*Click('a');*/
 }
 //pull from array and split to start comparing
 function getWord(){
-  var rnd = Math.floor(Math.random() * wordListBank.length);
-  currentWord = wordListBank [rnd][0];
-  currentCLue = wordListBank [rnd][0];
+  var rnd=Math.floor(Math.random() * wordListBank.length);
+  currentWord=wordListBank [rnd][0];
+  currentCLue=wordListBank [rnd][0];
   wordListBank.splice (rnd, 1);
   newArray = currentWord.split("");
 }
 
-function handleKeyUp(event){
+function recognizeKeyUp(event){
   if(event.keyCode>64 && event.keyCode<91){
     var found = false;
     var previouslyEntered=false;
