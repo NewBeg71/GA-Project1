@@ -40,6 +40,7 @@ console.log(choosenWord);*/
 //need the variables will use in functions
 //variable to assign random word to
 var array = [];
+
 var wordListBank = array;
 //variable to place individual letters into - an array - will need to split(Python methos) and place letters here
 var newArray = array;
@@ -73,7 +74,7 @@ $(document).ready (function(){
     });
 
       /*alert(wordListBank);*/
-var myTest = document.getElementByClassName('header');
+var myTest = document.getElementById('startButton');
   console.log(myTest);
 
 function header(){
