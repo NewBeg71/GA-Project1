@@ -71,8 +71,9 @@ $(document).ready (function(){
       wordListBank[i][1] = data.wordlist[i].clue;
         }
       });
-      //header();
-      //gameScreen();
+
+      header();
+      gameScreen();
       //getWord();
       //checkAnswer();
 
@@ -90,19 +91,19 @@ function header(){
 
 
 function gameScreen(){
-  $('.container').empty();
-  $('.container').append('<div class="imgPlace"><img class ="hangman" src ="man.png"></div>');
-  $('.container').append('<div class="wordPlace"></div>');
-  $('.container').append('<div class="cluePlace"></div>');
-  $('.container').append('<div class="guesses">Previous Guesses: </div>');
-  $('.container').append('<div class="feedback"></div>');
+  $(".container").empty();
+  $(".container").append('<div class="imgPlace"><img class ="hangman" src ="man.png"></div>');
+  $(".container").append('<div class="wordPlace"></div>');
+  $(".container").append('<div class="cluePlace"></div>');
+  $(".container").append('<div class="guesses">Previous Guesses: </div>');
+  $(".container").append('<div class="feedback"></div>');
 
  getWord();
   var numberOfTiles = currentWord.length;
   wrongAnswerCount = 0;
   previousWordChoices = [];
 
-  for(i=0; i<numberOfTiles; i++){
+  for(var i=0; i<numberOfTiles; i++){
     $('.wordPlace').append('div class="tile" id=t"+i+"></div>');
 }
 
@@ -114,7 +115,7 @@ $('.cluePlace').append('Hint: ' + currentClue);
 function getWord(){
   var rnd=Math.floor(Math.random() * wordListBank.length);
   currentWord=wordListBank [rnd][0];
-  currentCLue=wordListBank [rnd][0];
+  currentClue=wordListBank [rnd][0];
   wordListBank.splice (rnd, 1);
   newArray = currentWord.split("");
 }
@@ -125,7 +126,7 @@ function recognizeKeyUp(event){
     var previouslyEntered=false;
     var input=String.fromCharCode(event.keyCode).toLowerCase();
 
-    for(i=0; i<previousGuesses.length; i++){
+    for(var i=0; i<previousGuesses.length; i++){
       if(input==previousGuesses[i]){
         previouslyEntered=true;
       }
@@ -150,7 +151,7 @@ function recognizeKeyUp(event){
 
 function checkAnswer(){
   var currentAnswer="";
-for(i=0;i<currentWord.length;i++){
+for(var i=0;i<currentWord.length;i++){
   currentAnswer+=($('#t'+i).text());
 }
 if(currentAnswer==currentWord){
@@ -171,7 +172,7 @@ function victoryMessage(){
 	$(document).off("keyup", handleKeyUp);
 	$('#feedback').append("CORRECT!<br><br><div id='replay' class='button'>CONTINUE</div>");
     $('#replay').on("click",function (){
-    	if(questionBank.length>0){
+    	if(wordListBank.length>0){
     		gameScreen();}
     		else{finalPage();}
     });
@@ -181,7 +182,7 @@ function defeatMessage(){
     $(document).off("keyup", handleKeyUp);
     $('#feedback').append("You're Dead!<br>(answer= "+ currentWord +")<div id='replay' class='button'>CONTINUE</div>");
     $('#replay').on("click",function (){
-    	if(questionBank.length>0){
+    	if(wordListBank.length>0){
     	gameScreen();}
     	else{finalPage();}
 	});
