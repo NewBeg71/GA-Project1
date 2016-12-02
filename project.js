@@ -118,6 +118,7 @@ $(document).ready (function(){
 function header(){
   // took out next line to try to simplify the logic part - less to deal with
   /*$(".header").append('<h1>HANGMAN GAME</h1>');*/
+  // id and class are repetative
   $(".header").append('<div id="startButton" class="button">Start</div>');
   $("#startButton").on("click", function (){gameScreen();});
 }
@@ -125,7 +126,7 @@ function header(){
 
 function gameScreen(){
   $(".container").empty();
-  $(".container").append('<div class="imgPlace"><img class ="hangman" src ="man.png"></div>');
+  $(".container").append('<div class="imgPlace"><img class="hangman" src="man.png"></div>');
   $(".container").append('<div class="wordPlace"></div>');
   $(".container").append('<div class="cluePlace"></div>');
   $(".container").append('<div class="guesses">Previous Guesses: </div>');
@@ -228,7 +229,8 @@ function finalPage(){
     $('.container').empty();
     $('.container').append('<div id="finalMessage">You have exhausted your options!</div>');
   }
-//});
+//Here is a change for scope issue of dealing with avrs
+});
 
 
 
