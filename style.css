@@ -12,14 +12,19 @@
   height: 100%;
 }*/
 
+/*want a background gif from hand em high with music from BAD - an afterthgought
+*/
+
 body{
   background-image: url("https://images-na.ssl-images-amazon.com/images/M/MV5BMTU1NTUxODA2Nl5BMl5BanBnXkFtZTcwNTQ3NDkwNA@@._V1_UY100_CR13,0,100,100_AL_.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
   padding: 0;
+  /*two below were replaced by bg-s:cover*/
   /*height: 100%;
   width: 100%;*/
+  /*took out because it also made the two divs change parent effected children*/
   /*opacity: 0.2;*/
 }
 
@@ -35,6 +40,8 @@ body{
   border: 3px solid black;
   border-radius: 15px 50px;
   text-align: center;
+  font-size: 36px;
+  font-family: sans-serif;
 }
 
 h1 {
@@ -44,22 +51,24 @@ h1 {
   text-align: center;
 }
 
-#startButton{
-  background-color: blue;
+/*had the below but took out because really was not referenced and was duplicating button style*/
+
+/*#startButton{
+  background-color: blue;*/
   /*display: inline;*/
-  color: white;
+  /*color: white;
   width: 100px;
   margin: auto;
   border: 1px solid white;
   border-radius: 15px;
   text-align: center;
-}
+}*/
 
-/*want a background gif from hand em high with music from BAD - an afterthgought
-*/
+/* another div that handles the actual interactive game*/
+
 .container{
-  color: black;
-  font-style: bold;
+  /*color: black;
+  font-style: bold;*/
   font-family: sans-serif;
   text-align: center;
   width: 50%;
@@ -70,9 +79,12 @@ h1 {
   padding: 20px;
   /*display: block;*/
   margin: 5% auto;
+  /*really do not remember why I did the below - got caught up in design*/
   /*position: relative;
   overflow: hidden;*/
 }
+
+/*see last above comment*/
   /*background-color: white;
   justify-content: center;
   align-items: flex-center;*/
@@ -111,7 +123,7 @@ h1 {
 }
 
 .button{
-  font-size: 20px;
+  font-size: 16px;
   width: 100px;
   margin: auto;
   margin-top: 20px;
@@ -153,6 +165,7 @@ h1 {
   top: 0;
 }
 
+/*Everything below was from attempt of old way first and decided itwas too much js*/
 
 /*#letterOpts a{
   color: white;

@@ -63,13 +63,16 @@ var wordDisplay = '';*/
 
 //start creating functions
 //pull data - set up basic html w/ javascript functions
+//******GOING THROUGH AND SQUASHING EVERYTHING AND REMOVING SEMICOLONS ATOM TOLD ME TO ADD AND SEEING WHAT I GET BACK - WILL BE COMMENTED OUT
+//*********WHY DOES ATOM TELL ME THERE ARE MISTAKES (ie warnings and erros that will work elsewhere)
+
 $(document).ready (function(){
 
   var array = [];
 
   var wordListBank = array;
   //variable to place individual letters into - an array - will need to split(Python methos) and place letters here
-  var newArray = array;
+  var newWordArray = array;
   //an array for choosenletters [maybe which will use to black out letter
   var previousWordChoices = array;
   //for number of chances have till hung
@@ -113,7 +116,8 @@ $(document).ready (function(){
   //console.log(myTest);
 
 function header(){
-  $(".header").append('<h1>HANGMAN GAME</h1>');
+  // took out next line to try to simplify the logic part - less to deal with
+  /*$(".header").append('<h1>HANGMAN GAME</h1>');*/
   $(".header").append('<div id="startButton" class="button">Start</div>');
   $("#startButton").on("click", function (){gameScreen();});
 }
@@ -126,7 +130,7 @@ function gameScreen(){
   $(".container").append('<div class="cluePlace"></div>');
   $(".container").append('<div class="guesses">Previous Guesses: </div>');
   $(".container").append('<div class="feedback"></div>');
-  $("container").append('<form><input type="text" id="dummy"></form>');
+  $(".container").append('<form><input type="text" id="dummy"></form>');
 
  getWord();
   var numberOfTiles=currentWord.length;
@@ -149,7 +153,7 @@ function getWord(){
   currentWord=wordListBank [rnd][0];
   currentClue=wordListBank [rnd][1];
   wordListBank.splice (rnd, 1);
-  newArray = currentWord.split("");
+  newWordArray = currentWord.split("");
 }
 
 function recognizeKeyUp(event){
@@ -160,20 +164,15 @@ function recognizeKeyUp(event){
 
     for(var i=0; i<previousWordChoices.length; i++){
 
-      if(input==previousWordChoices[i]){
-        previouslyEntered=true;
-      }
+      if(input==previousWordChoices[i]){previouslyEntered=true;}
     }
 
     if(!previouslyEntered){
       previousWordChoices.push(input);
 
-      for(i=0; i<newArray.length; i++){
+      for(i=0; i<newWordArray.length; i++){
 
-        if(input==newArray[i]){
-          found=true;
-          $('#t'+i).append(input);
-        }
+        if(input==newWordArray[i]){found=true;$('#t'+i).append(input);}
       }
 
       if(found){checkAnswer();}
@@ -229,7 +228,7 @@ function finalPage(){
     $('.container').empty();
     $('.container').append('<div id="finalMessage">You have exhausted your options!</div>');
   }
-});
+//});
 
 
 
